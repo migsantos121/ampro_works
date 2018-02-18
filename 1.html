@@ -1,0 +1,79 @@
+<head>
+	<title>Amchart column charts with multiple datasets</title>
+	<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+	<script src="http://www.amcharts.com/lib/3/serial.js"></script>
+	<script>
+		var chart;
+
+		var chartData = [
+		    // Data set #1
+		    [
+		        { country: "Czech Republic", litres: 156.90},
+		        { country: "Ireland", litres: 131.10},
+		        { country: "Germany", litres: 115.80},
+		        { country: "Australia", litres: 109.90},
+		        { country: "Austria", litres: 108.30},
+		        { country: "UK", litres: 99.00}
+		    ],
+		    // Data set #2
+		    [
+		        { country: "Czech Republic", litres: 101.20},
+		        { country: "Ireland", litres: 141.20},
+		        { country: "Germany", litres: 91.80},
+		        { country: "Australia", litres: 101.90},
+		        { country: "Austria", litres: 125.30},
+		        { country: "UK", litres: 101.50}
+		    ]
+		]
+		AmCharts.ready(function() {
+		    // RADAR CHART
+		    chart = new AmCharts.AmSerialChart();
+		    chart.dataProvider = chartData[0];
+		    chart.categoryField = "country";
+		    chart.startDuration = 1;
+		    chart.sequencedAnimation = false;
+
+		    // VALUE AXIS
+		    var valueAxis = new AmCharts.ValueAxis();
+		    valueAxis.axisAlpha = 0.15;
+		    valueAxis.minimum = 0;
+		    valueAxis.dashLength = 3;
+		    chart.addValueAxis(valueAxis);
+
+		    // GRAPH
+		    var graph = new AmCharts.AmGraph();
+		    graph.type = "column";
+		    graph.valueField = "litres";
+		    graph.fillAlphas = 0.6;
+		    graph.balloonText = "[[value]] litres of beer per year";
+		    chart.addGraph(graph);
+
+		    // WRITE
+		    chart.write("chartdiv");
+		});
+
+		function selectDataset(d) {
+		    chart.dataProvider = chartData[d];
+		    chart.validateData();
+		    chart.animateAgain();
+		}
+	</script>
+	<style>
+		#selector {
+		    font-family: Verdana;
+		    background-color: #efefef;
+		    padding: 10px;
+		    margin-bottom: 10px;
+		    border-bottom: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="selector">Select a dataset:
+	    &nbsp;&nbsp;&nbsp;
+	    <label><input type="radio" value="0" name="dataset" checked="checked" onclick="selectDataset(0);" /> Data set #1</label>
+	    &nbsp;&nbsp;&nbsp;
+	    <label><input type="radio" value="1" name="dataset" onclick="selectDataset(1);" /> Data set #2</label>
+	</div>
+	<div id="chartdiv" style="width: 100%; height: 362px;"></div>
+</body>

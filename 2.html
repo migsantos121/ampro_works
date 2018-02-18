@@ -1,0 +1,122 @@
+<head>
+	<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+	<script src="https://www.amcharts.com/lib/3/maps/js/worldHigh.js"></script>
+	<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+	<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+	<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<style>
+		 #chartdiv {
+		  width: 100%;
+		  height: 500px;
+		}                               
+	</style>
+</head>
+<body>
+	<div id="chartdiv"></div>
+	<script>
+		var map = AmCharts.makeChart( "chartdiv", {
+		  "type": "map",
+		  "theme": "light",
+		  "dataProvider": {
+		    "map": "worldHigh",
+		    "zoomLevel": 3.5,
+		    "zoomLongitude": 10,
+		    "zoomLatitude": 52,
+		    "areas": [ {
+		        "id": "AT",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "IE",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "DK",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "FI",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "SE",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "GB",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "IT",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "FR",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "ES",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "GR",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "DE",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "BE",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "LU",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "NL",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "PT",
+		        "color": "#67b7dc"
+		      }, {
+		        "id": "LT",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "LV",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "CZ",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "SK",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "SI",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "EE",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "HU",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "CY",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "MT",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "PL",
+		        "color": "#ebdb8b"
+		      }, {
+		        "id": "RO",
+		        "color": "#83c2ba"
+		      }, {
+		        "id": "BG",
+		        "color": "#83c2ba"
+		      }, {
+		        "id": "HR",
+		        "color": "#db8383"
+		      }
+		    ]
+		  },
+
+		  "areasSettings": {
+		    "rollOverOutlineColor": "#FFFFFF",
+		    "rollOverColor": "#CC0000",
+		    "alpha": 0.8,
+		    "unlistedAreasAlpha": 0
+		  }
+
+		} );
+	</script>
+</body>
